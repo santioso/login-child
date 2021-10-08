@@ -5,7 +5,7 @@ import { Observable, of, } from 'rxjs';
 @Injectable({
 	providedIn: 'root'
 })
-export class AuthMockService implements AuthServiceInterface {
+export class AuthService implements AuthServiceInterface {
 
 
 	constructor(private http: HttpClient) { }

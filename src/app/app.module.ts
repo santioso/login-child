@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PasswordComponent } from './password/password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 	ReactiveFormsModule,
 	FontAwesomeModule
   ],
-  providers: [],
+  providers: [  ...environment.providers ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
