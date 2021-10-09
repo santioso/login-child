@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { PasswordComponent } from './password/password.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,7 @@ import { environment } from 'src/environments/environment';
   imports: [
     BrowserModule,
 	HttpClientModule,
+	FormsModule,
 	ReactiveFormsModule,
 	FontAwesomeModule
   ],

@@ -7,8 +7,16 @@ import { Observable, of, } from 'rxjs';
 })
 export class AuthService implements AuthServiceInterface {
 
-
+	/** @constructor */
 	constructor(private http: HttpClient) { }
+	/**
+	 * Mock que verifica si el usuario y la contraseña son válidos 
+	 * @type {observable}
+	 * 
+	 * @param  {string}
+	 *
+	 * @return  {boolean}
+   */
 
 	login(params: { usuario: string, pass: string }): Observable<boolean> {
 
@@ -17,5 +25,4 @@ export class AuthService implements AuthServiceInterface {
 		}
 		return of(false);
 	}
-
 }
