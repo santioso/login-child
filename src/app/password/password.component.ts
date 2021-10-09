@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { icon } from '@fortawesome/fontawesome-svg-core';
 import { iconosContrasenia } from '../models/datosContrasenia.model';
 import { ItemContraseniaInterface } from '../models/itemContrasenia.interface';
-
+/**
+ * Componente donde se cargan los iconos de manera aleatoria
+ */
 @Component({
 	selector: 'app-password',
 	templateUrl: './password.component.html',
@@ -10,8 +11,9 @@ import { ItemContraseniaInterface } from '../models/itemContrasenia.interface';
 })
 export class PasswordComponent implements OnInit {
 
-
-	@Input() password: number;
+	/**
+	 * Esta variable emitira la contraseña de acuerdo a los iconos seleccionados
+	 */
 	@Output() onContrasenia: EventEmitter<string>;
 
 	public iconosAnimales: Array<ItemContraseniaInterface>;
@@ -28,7 +30,7 @@ export class PasswordComponent implements OnInit {
 
 	/**
 	 * Devuelve los iconos en posición aleatoria
-	 * @returns {Array} 
+	 * @returns {Array<ItemContraseniaInterface>}
 	 */
 	barajarAnimales(): Array<ItemContraseniaInterface> {
 		return iconosContrasenia.sort(() => Math.random() - 0.5);
@@ -38,7 +40,6 @@ export class PasswordComponent implements OnInit {
 	 * Agrega el nombre del cada animal seleccionado a la contraseña, sin  comillas ni comas
 	 * Emite la contraseña al componente padre
 	 * @param {icono}
-	 * @returns {string} 
 	 */
 
 	itemSeleccionado(icono: ItemContraseniaInterface) {
@@ -47,12 +48,12 @@ export class PasswordComponent implements OnInit {
 		//console.log(this.contrasenia);
 	}
 
-		/**
+	/**
 	 * Borra la contraseña
-	 * @returns {string} 
+	 * @returns
 	 */
 
-	limpiarContrasenia() {
+	limpiarContrasenia():void {
 		this.contrasenia = [];
 		this.onContrasenia.emit(this.contrasenia.join(""))
 		console.log(this.contrasenia);

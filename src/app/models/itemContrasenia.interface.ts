@@ -1,8 +1,9 @@
 
 import { IconDefinition } from "@fortawesome/fontawesome-common-types";
+
 /**
-* @interface
-*/
+ * @Interface
+ */
 export interface ItemContraseniaInterface{
 	icono:IconDefinition;
 	nombre:string;

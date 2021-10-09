@@ -2,7 +2,7 @@ import { faCat, faDog, faSpider, faCrow, faHorse, faFrog, faFish, faHippo, faDra
 import { ItemContraseniaInterface } from './itemContrasenia.interface';
 
  /**
-   * Crea el arreglo de iconos de aimales, se cargan desde fontawesome
+   * Arreglo de iconos de aimales, se cargan desde fontawesome
    * @type {array}
    */
 export const iconosContrasenia: ItemContraseniaInterface[] = [

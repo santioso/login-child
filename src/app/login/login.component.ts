@@ -3,6 +3,9 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/mockAuth.service';
 
+/**
+ * Componente Login
+ */
 @Component({
 	selector: 'app-login',
 	templateUrl: './login.component.html',
@@ -26,7 +29,7 @@ export class LoginComponent implements OnInit {
 	/**
 	 * Inicia le formulario login
 	  */
-	iniciarFormulario() {
+	iniciarFormulario(): void {
 		this.formLogin = this.fb.group({
 			usuario: ["", [Validators.required]],
 			pass: ["", Validators.required],
@@ -38,7 +41,7 @@ export class LoginComponent implements OnInit {
 	 * Obtiene el password emitida por el componente app-password
 	 * @param pass {string}
 	 */
-	contrasenia(pass: string) {
+	contrasenia(pass: string):void {
 		this.formLogin.get("pass")?.setValue(pass)
 		if (pass == "" || pass == null) {
 			this.getControl("passAsteriscos")?.setValue("")
@@ -60,9 +63,9 @@ export class LoginComponent implements OnInit {
 	 * Si los parámetros no vienen completos devuelve falso 
 	 * Si vienen los parámetros completos verifica que coincidan con el password válido 
 	 * @param  {string} - usuario, pass  
-	 * @return  {boolean} o {string}  
+	 * @return  
 	 */
-	iniciarSession() {
+	iniciarSession(): void {
 		if (!this.formLogin.valid) {
 			Swal.fire("Error", "Campos imcompletos", "warning");
 			return;
